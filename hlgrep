@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hledger reg | grep -i "$1"
