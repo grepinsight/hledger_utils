@@ -1,0 +1,10 @@
+#!/bin/bash
+
+color_echo "--- Balance ---"
+hledger bal --begin=${BEGIN_OF_THIS_MONTH} expenses $(cat $HOME/.hledger.exclude.summary | tr '\n' ' ') --average --row-total
+
+color_echo "--- Daily Average  ---"
+hledger bal --begin=${BEGIN_OF_THIS_MONTH} expenses $(cat $HOME/.hledger.exclude.summary | tr '\n' ' ') --daily --average --row-total
+
+color_echo "--- Daily Register ---"
+hledger reg --begin=${BEGIN_OF_THIS_MONTH} expenses $(cat $HOME/.hledger.exclude.summary | tr '\n' ' ')
