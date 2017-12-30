@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+HLREPORT_PATH=$HOME/entry.hledger.txt
+TODAY=$(date --date="today" +"%Y/%m/%d")
+
+
+echo "${TODAY} - all checked out. Transaction added to $HLREPORT_PATH"
+echo "echo \"${TODAY} - all checked out\"" >> ${HLREPORT_PATH}
